@@ -3,34 +3,50 @@
 //  OrderedSetTests
 //
 //  Created by Zach Langley on 11/18/15.
-//  Copyright © 2015 Operator. All rights reserved.
+//  Copyright © 2015 Zach Langley. All rights reserved.
 //
 
 import XCTest
 @testable import OrderedSet
 
 class OrderedSetTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testNewOrderedSetHasNoCount() {
+        let orderedSet: OrderedSet<Int> = []
+        XCTAssertEqual(orderedSet.count, 0)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    func testIndexable() {
+        let orderedSet: OrderedSet = [1, 2, 3]
+        XCTAssertEqual(orderedSet[1], 2)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testAppend() {
+        var orderedSet: OrderedSet = [1, 2, 3]
+        orderedSet.append(4)
+
+        XCTAssertEqual(orderedSet.last, 4)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testReplaceRange() {
+        var orderedSet: OrderedSet = [1, 2, 3, 4, 5]
+        orderedSet[0...2] = [-1, -2, -3]
+
+        XCTAssertTrue(orderedSet == [-1, -2, -3, 4, 5])
+        XCTAssertTrue([-1, -2, -3, 4, 5] == orderedSet)
     }
-    
+
+    func testReplaceWithExisting() {
+        var orderedSet: OrderedSet = [1, 2, 3, 4, 5]
+        orderedSet[0] = 5
+
+        XCTAssertTrue(orderedSet == [2, 3, 4, 5])
+    }
+
+    func testEquals() {
+        XCTAssertTrue([1, 2, 3] as OrderedSet == [1, 2, 3])
+    }
+
+    func testNotEquals() {
+        XCTAssertTrue([1, 2, 3] as OrderedSet != [1, 2])
+    }
 }

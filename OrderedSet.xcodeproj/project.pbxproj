@@ -10,6 +10,7 @@
 		49219AE31BFCFD8A000DCF13 /* OrderedSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 49219AE21BFCFD8A000DCF13 /* OrderedSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49219AEA1BFCFD8A000DCF13 /* OrderedSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49219ADF1BFCFD8A000DCF13 /* OrderedSet.framework */; };
 		49219AEF1BFCFD8A000DCF13 /* OrderedSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49219AEE1BFCFD8A000DCF13 /* OrderedSetTests.swift */; };
+		49219AFC1BFCFDB1000DCF13 /* OrderedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49219AFB1BFCFDB1000DCF13 /* OrderedSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		49219AE91BFCFD8A000DCF13 /* OrderedSetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderedSetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49219AEE1BFCFD8A000DCF13 /* OrderedSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedSetTests.swift; sourceTree = "<group>"; };
 		49219AF01BFCFD8A000DCF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49219AFB1BFCFDB1000DCF13 /* OrderedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				49219AE21BFCFD8A000DCF13 /* OrderedSet.h */,
+				49219AFB1BFCFDB1000DCF13 /* OrderedSet.swift */,
 				49219AE41BFCFD8A000DCF13 /* Info.plist */,
 			);
 			path = OrderedSet;
@@ -144,7 +147,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = Operator;
+				ORGANIZATIONNAME = "Zach Langley";
 				TargetAttributes = {
 					49219ADE1BFCFD8A000DCF13 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49219AFC1BFCFDB1000DCF13 /* OrderedSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 		49219AF41BFCFD8A000DCF13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -315,15 +320,17 @@
 				INFOPLIST_FILE = OrderedSet/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operator.OrderedSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zlangley.OrderedSet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		49219AF51BFCFD8A000DCF13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -331,7 +338,7 @@
 				INFOPLIST_FILE = OrderedSet/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operator.OrderedSet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zlangley.OrderedSet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -342,7 +349,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = OrderedSetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operator.OrderedSetTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zlangley.OrderedSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -352,7 +359,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = OrderedSetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.operator.OrderedSetTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zlangley.OrderedSetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -376,6 +383,7 @@
 				49219AF51BFCFD8A000DCF13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49219AF61BFCFD8A000DCF13 /* Build configuration list for PBXNativeTarget "OrderedSetTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +392,7 @@
 				49219AF81BFCFD8A000DCF13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

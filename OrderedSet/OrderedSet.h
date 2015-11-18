@@ -3,7 +3,7 @@
 //  OrderedSet
 //
 //  Created by Zach Langley on 11/18/15.
-//  Copyright © 2015 Operator. All rights reserved.
+//  Copyright © 2015 Zach Langley. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
